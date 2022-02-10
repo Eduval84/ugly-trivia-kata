@@ -32,7 +32,7 @@ namespace Trivia
             }
         }
 
-        private string CreateRockQuestion(int index)
+        private static string CreateRockQuestion(int index)
         {
             return "Rock Question " + index;
         }
@@ -82,8 +82,8 @@ namespace Trivia
             }
             else
             {
-                _places[_currentPlayer] = _places[_currentPlayer] + roll;
-                if (_places[_currentPlayer] > 11) _places[_currentPlayer] = _places[_currentPlayer] - 12;
+                _places[_currentPlayer] += roll;
+                if (_places[_currentPlayer] > 11) _places[_currentPlayer] -= 12;
 
                 Console.WriteLine(_players[_currentPlayer]
                         + "'s new location is "
@@ -110,11 +110,9 @@ namespace Trivia
                 Console.WriteLine(_sportsQuestions.First());
                 _sportsQuestions.RemoveFirst();
             }
-            if (CurrentCategory() == "Rock")
-            {
-                Console.WriteLine(_rockQuestions.First());
-                _rockQuestions.RemoveFirst();
-            }
+            if (CurrentCategory() != "Rock") return;
+            Console.WriteLine(_rockQuestions.First());
+            _rockQuestions.RemoveFirst();
         }
 
         private string CurrentCategory()
