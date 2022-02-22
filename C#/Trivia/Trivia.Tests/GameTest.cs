@@ -7,7 +7,7 @@ namespace Trivia.Tests
 {
     public class GameTest
     {
-        private string expectedGame = @"Chet was added
+        private string expectedResult = @"Chet was added
 They are player number 1
 Pat was added
 They are player number 2
@@ -163,8 +163,7 @@ Pat now has 6 Gold Coins.
 
             GameRunner.Main();
             string gameResult = stringBuilder.ToString();
-            //Assert.Equal(GoldenMasterExpectedOutput, gameResult);
-            Assert.True(false);
+            Assert.Equal(expectedResult, gameResult);
         }
     }
 }
