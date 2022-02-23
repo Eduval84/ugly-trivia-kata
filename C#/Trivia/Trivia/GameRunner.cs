@@ -9,12 +9,27 @@ namespace Trivia
 
         public static void Main()
         {
+            CrateNewGame();
+        }
+
+        private static void CrateNewGame()
+        {
             var aGame = new Game();
 
+            AddPlayersToGame(aGame);
+
+            StartNewGame(aGame);
+        }
+
+        private static void AddPlayersToGame(Game aGame)
+        {
             aGame.Add("Chet");
             aGame.Add("Pat");
             aGame.Add("Sue");
+        }
 
+        private static void StartNewGame(Game aGame)
+        {
             var rand = new Random(seed);
 
             do
@@ -24,5 +39,7 @@ namespace Trivia
                 _notAWinner = rand.Next(9) == 7 ? aGame.WrongAnswer() : aGame.WasCorrectlyAnswered();
             } while (_notAWinner);
         }
+
+
     }
 }
