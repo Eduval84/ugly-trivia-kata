@@ -5,6 +5,7 @@ namespace Trivia
     public static class GameRunner
     {
         private static bool _notAWinner;
+        public static int seed;
 
         public static void Main()
         {
@@ -14,7 +15,7 @@ namespace Trivia
             aGame.Add("Pat");
             aGame.Add("Sue");
 
-            var rand = new Random(0711);
+            var rand = new Random(seed);
 
             do
             {
