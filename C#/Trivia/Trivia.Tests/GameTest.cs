@@ -429,9 +429,10 @@ Sue now has 6 Gold Coins.
         {
             StringBuilder stringBuilder = new StringBuilder();
             Console.SetOut(new StringWriter(stringBuilder));
+            var seed = 0711;
+            var game = new GameRunner(seed);
 
-            GameRunner.seed = 0711;
-            GameRunner.Main();
+            game.CrateNewGame();
             string gameResult = stringBuilder.ToString();
             Assert.Equal(expectedResult_0711, gameResult);
         }
@@ -441,9 +442,10 @@ Sue now has 6 Gold Coins.
         {
             StringBuilder stringBuilder = new StringBuilder();
             Console.SetOut(new StringWriter(stringBuilder));
+            var seed = 19101984;
+            var game = new GameRunner(seed);
 
-            GameRunner.seed = 19101984;
-            GameRunner.Main();
+            game.CrateNewGame();
             string gameResult = stringBuilder.ToString();
             Assert.Equal(expectedResult_19101984, gameResult);
         }
@@ -453,9 +455,10 @@ Sue now has 6 Gold Coins.
         {
             StringBuilder stringBuilder = new StringBuilder();
             Console.SetOut(new StringWriter(stringBuilder));
+            var seed = 123456789;
+            var game = new GameRunner(seed);
 
-            GameRunner.seed = 123456789;
-            GameRunner.Main();
+            game.CrateNewGame();
             string gameResult = stringBuilder.ToString();
             Assert.Equal(expectedResult_123456789, gameResult);
         }

@@ -2,22 +2,27 @@
 
 namespace Trivia
 {
-    public static class GameRunner
+    public class GameRunner
     {
         private static bool _notAWinner;
-        public static int seed;
+        private static readonly GameRunner _instance;
+        private static int _seed;
+
+        public GameRunner(int seed)
+        {
+            _seed = seed;
+        }
 
         public static void Main()
         {
-            CrateNewGame();
+            _instance.CrateNewGame();
         }
 
-        private static void CrateNewGame()
+        public void CrateNewGame()
         {
             var aGame = new Game();
 
             AddPlayersToGame(aGame);
-
             StartNewGame(aGame);
         }
 
@@ -30,7 +35,7 @@ namespace Trivia
 
         private static void StartNewGame(Game aGame)
         {
-            var rand = new Random(seed);
+            var rand = new Random(_seed);
 
             do
             {
