@@ -457,7 +457,7 @@ Sue now has 6 Gold Coins.
             GameRunner.seed = 123456789;
             GameRunner.Main();
             string gameResult = stringBuilder.ToString();
-            Assert.Equal(expectedResult_19101984, gameResult);
+            Assert.Equal(expectedResult_123456789, gameResult);
         }
     }
 }
