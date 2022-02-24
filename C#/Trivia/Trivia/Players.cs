@@ -5,11 +5,11 @@ namespace Trivia
 {
     public class Players
     {
-        public readonly List<string> _players = new List<string>();
-        public readonly int[] _places = new int[6];
-        public readonly int[] _purses = new int[6];
-        public readonly bool[] _inPenaltyBox = new bool[6];
-        public int _currentPlayer;
+        public List<string> PlayersList { get; } = new List<string>();
+        public int[] Places { get; } = new int[6];
+        public int[] Purses { get; } = new int[6];
+        public bool[] IsInPenaltyBox { get; } = new bool[6];
+        public int CurrentPlayer { get; set; }
 
         public Players()
         {
@@ -17,18 +17,18 @@ namespace Trivia
 
         public void Add(string playerName)
         {
-            _players.Add(playerName);
-            _places[HowManyPlayers()] = 0;
-            _purses[HowManyPlayers()] = 0;
-            _inPenaltyBox[HowManyPlayers()] = false;
+            PlayersList.Add(playerName);
+            Places[HowManyPlayers()] = 0;
+            Purses[HowManyPlayers()] = 0;
+            IsInPenaltyBox[HowManyPlayers()] = false;
 
             Console.WriteLine(playerName + " was added");
-            Console.WriteLine("They are player number " + _players.Count);
+            Console.WriteLine("They are player number " + PlayersList.Count);
         }
 
         private int HowManyPlayers()
         {
-            return _players.Count;
+            return PlayersList.Count;
         }
     }
 }
