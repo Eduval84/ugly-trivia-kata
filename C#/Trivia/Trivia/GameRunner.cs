@@ -28,9 +28,9 @@ namespace Trivia
 
         private static void AddPlayersToGame(Game aGame)
         {
-            aGame.Add("Chet");
-            aGame.Add("Pat");
-            aGame.Add("Sue");
+            aGame.Players.Add("Chet");
+            aGame.Players.Add("Pat");
+            aGame.Players.Add("Sue");
         }
 
         private static void StartNewGame(Game aGame)
